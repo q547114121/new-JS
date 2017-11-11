@@ -1,8 +1,8 @@
+//加载背景图片
 $(function(argument) {
   	$('.banner').css('height',$(document).height()) ;
-   	//通过表单序列话操作，来给POST请求传值
-   	
 });
+//获得用于显示错误信息的元素
 var checkResult=document.querySelector('.check-submit');
 checkResult.style.visibility = 'hidden';
 var submits =function(){
