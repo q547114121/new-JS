@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="js5.css">
+    <title>Document</title>
+</head>
+    <body>
+        <div class="banner" ng-app="app">
+            <div class="load-box">
+                <h3>后台登陆</h3>
+                <form class="form-horizontal" ng-controller="ctrl" name='form' novalidate="true" ng-submit="submit()">
+                    <div class="form-group">
+                        <label for="InputName" class="col-sm-1 control-label">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                        </label>
+                        <div class="col-sm-11">
+                            <input type="text" class="form-control"  placeholder="请输入用户名" name="name" required ng-model="name" ng-minlength='5' />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-sm-1 control-label">
+                            <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+                        </label>
+                        <div class="col-sm-11">
+                            <input type="password" class="form-control"  placeholder="请输入密码" name="pwd" required ng-model="pwd">
+                        </div>
+                    </div>
+                    <div class="error-container" >
+                        <div ng-show="form.$invalid && form.$dirty">
+                            <p ng-show="form.name.$error.required" ng-cloak>用户名是必须的</p>
+                            <p ng-show="form.pwd.$error.required && form.name.$valid" ng-cloak>密码是必须的</p>
+                            <p ng-show="form.name.$error.minlength" ng-cloak>用户名的长度要大于4</p>
+                        </div>
+                        <p ng-show="form.$valid" ng-bind="resError"></p>       
+                    </div>
+                    <div class="form-group button-container">
+                        <div class="col-sm-12">
+                            <p><button type="submit" class="btn btn-info" ng-disabled="form.$invalid" >登录</button><p>
+                        </div>
+                    </div>
+                    <div>
+                </form>
+            </div>
+
+        </div>
+    </body>
+
+
+
+
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+<script src="https://cdn.bootcss.com/angular.js/1.6.0/angular.min.js"></script>
+<script type="text/javascript" src="js5-2.js"></script>
+</html>
